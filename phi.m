@@ -14,5 +14,5 @@ for n=1:N
     upper = (V_thresh -V_leak - mu(n)) / sigma(n) + gamma * s_tau;
     x = linspace(lower,upper,100);
     y = exp(x.^2) .* (1 + erf(x));
-    f(n) = (tau_r + tau_m * sqrt(pi) * trapz(x,y))^-1; % Hz
+    f(n) = (tau_r + tau_m * sqrt(pi) * trapz(y,x))^-1; % Hz
 end
